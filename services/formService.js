@@ -1,79 +1,69 @@
-(FormService = function() {
-  const validateName = function(name) {
+class FormService {
+  validateName(name) {
     return Regex.name.test(name);
-  };
+  }
 
-  const validateSurname = function(surname) {
+  validateSurname(surname) {
     return Regex.surname.test(surname);
-  };
+  }
 
-  const validateEmail = function(email) {
+  validateEmail(email) {
     return Regex.email.test(email);
-  };
+  }
 
-  const validateAddress = function(address) {
+  validateAddress(address) {
     return Regex.address.test(address);
-  };
+  }
 
-  const isDefaultCountry = function(country) {
+  _isDefaultCountry(country) {
     return country === DEFAULT_COUNTRY;
-  };
+  }
 
-  const validateSpanishBirth = function(birth) {
+  _validateSpanishBirth(birth) {
     return Regex.spanish.birth(birth);
-  };
-  const validateAmericanBirth = function(birth) {
+  }
+  _validateAmericanBirth(birth) {
     return Regex.american.birth.test(birth);
-  };
-  const validateBirth = function(birth, country) {
+  }
+  validateBirth(birth, country) {
     return this.isDefaultCountry(country)
       ? this.validateSpanishBirth(birth)
       : this.validateAmericanBirth(birth);
-  };
+  }
 
-  const validateSpanishPostCode = function(postCode) {
+  _validateSpanishPostCode(postCode) {
     return Regex.spanish.postCode.test(postCode);
-  };
-  const validateAmericanPostCode = function(postCode) {
+  }
+  _validateAmericanPostCode(postCode) {
     return Regex.american.postCode.test(postCode);
-  };
-  const validatePostCode = function(postCode, country) {
+  }
+  validatePostCode(postCode, country) {
     return this.isDefaultCountry(country)
       ? this.validateSpanishPostCode(postCode)
       : this.validateAmericanPostCode(postCode);
-  };
+  }
 
-  const validateSpanishPhone = function(phone) {
+  _validateSpanishPhone(phone) {
     return Regex.spanish.phone.test(phone);
-  };
-  const validateAmericanPhone = function(phone) {
+  }
+  _validateAmericanPhone(phone) {
     return Regex.american.phone.test(phone);
-  };
-  const validatePhone = function(phone, country) {
+  }
+  validatePhone(phone, country) {
     return this.isDefaultCountry(country)
       ? this.validateSpanishPhone(phone)
       : this.validateAmericanPhone(phone);
-  };
+  }
 
-  const validateSpanishMobilePhone = function(mobilePhone) {
+  _validateSpanishMobilePhone(mobilePhone) {
     return Regex.spanish.mobilePhone.test(mobilePhone);
-  };
-  const validateAmericanMobilePhone = function(mobilePhone) {
+  }
+  _validateAmericanMobilePhone(mobilePhone) {
     return Regex.american.mobilePhone.test(mobilePhone);
-  };
-  const validateMobilePhone = function(mobilePhone, country) {
+  }
+  validateMobilePhone(mobilePhone, country) {
     return this.isDefaultCountry(country)
       ? this.validateSpanishMobilePhone(mobilePhone)
       : this.validateAmericanMobilePhone(mobilePhone);
-  };
-
-  return {
-    validateName,
-    validateSurname,
-    validateAddress,
-    validateBirth,
-    validatePostCode,
-    validatePhone,
-    validateMobilePhone
-  };
-})();
+  }
+}

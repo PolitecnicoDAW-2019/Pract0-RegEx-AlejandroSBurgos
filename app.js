@@ -1,1 +1,1 @@
-new FormController(new FormView(), new FormService());
+const controller = new FormController(new FormView(), new FormService());
