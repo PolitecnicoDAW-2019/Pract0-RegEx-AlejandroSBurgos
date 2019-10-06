@@ -8,7 +8,7 @@
     element.style.borderColor = RESULT_COLOR.error;
   };
 
-  const isAmount = function(text) {
+  const isLenght = function(text) {
     const textLenght = text.lenght
     return textLenght >= 3;
   };
