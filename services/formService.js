@@ -1,17 +1,17 @@
 class FormService {
-  validateName(name) {
+  isValidName(name) {
     return Regex.name.test(name);
   }
 
-  validateSurname(surname) {
+  isValidSurname(surname) {
     return Regex.surname.test(surname);
   }
 
-  validateEmail(email) {
+  isValidEmail(email) {
     return Regex.email.test(email);
   }
 
-  validateAddress(address) {
+  isValidAddress(address) {
     return Regex.address.test(address);
   }
 
@@ -19,51 +19,51 @@ class FormService {
     return country === DEFAULT_COUNTRY;
   }
 
-  _validateSpanishBirth(birth) {
+  _isValidSpanishBirth(birth) {
     return Regex.spanish.birth(birth);
   }
-  _validateAmericanBirth(birth) {
+  _isValidAmericanBirth(birth) {
     return Regex.american.birth.test(birth);
   }
-  validateBirth(birth, country) {
+  isValidBirth(birth, country) {
     return this.isDefaultCountry(country)
-      ? this.validateSpanishBirth(birth)
-      : this.validateAmericanBirth(birth);
+      ? this.isValidSpanishBirth(birth)
+      : this.isValidAmericanBirth(birth);
   }
 
-  _validateSpanishPostCode(postCode) {
-    return Regex.spanish.postCode.test(postCode);
+  _isValidSpanishZipCode(zipCode) {
+    return Regex.spanish.zipCode.test(zipCode);
   }
-  _validateAmericanPostCode(postCode) {
-    return Regex.american.postCode.test(postCode);
+  _isValidAmericanZipCode(zipCode) {
+    return Regex.american.zipCode.test(zipCode);
   }
-  validatePostCode(postCode, country) {
+  isValidZipCode(zipCode, country) {
     return this.isDefaultCountry(country)
-      ? this.validateSpanishPostCode(postCode)
-      : this.validateAmericanPostCode(postCode);
+      ? this.isValidSpanishZipCode(zipCode)
+      : this.isValidAmericanZipCode(zipCode);
   }
 
-  _validateSpanishPhone(phone) {
+  _isValidSpanishPhone(phone) {
     return Regex.spanish.phone.test(phone);
   }
-  _validateAmericanPhone(phone) {
+  _isValidAmericanPhone(phone) {
     return Regex.american.phone.test(phone);
   }
-  validatePhone(phone, country) {
+  isValidPhone(phone, country) {
     return this.isDefaultCountry(country)
-      ? this.validateSpanishPhone(phone)
-      : this.validateAmericanPhone(phone);
+      ? this.isValidSpanishPhone(phone)
+      : this.isValidAmericanPhone(phone);
   }
 
-  _validateSpanishMobilePhone(mobilePhone) {
+  _isValidSpanishMobilePhone(mobilePhone) {
     return Regex.spanish.mobilePhone.test(mobilePhone);
   }
-  _validateAmericanMobilePhone(mobilePhone) {
+  _isValidAmericanMobilePhone(mobilePhone) {
     return Regex.american.mobilePhone.test(mobilePhone);
   }
-  validateMobilePhone(mobilePhone, country) {
+  isValidMobilePhone(mobilePhone, country) {
     return this.isDefaultCountry(country)
-      ? this.validateSpanishMobilePhone(mobilePhone)
-      : this.validateAmericanMobilePhone(mobilePhone);
+      ? this.isValidSpanishMobilePhone(mobilePhone)
+      : this.isValidAmericanMobilePhone(mobilePhone);
   }
 }

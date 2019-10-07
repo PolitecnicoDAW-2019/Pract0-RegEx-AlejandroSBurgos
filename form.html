@@ -6,7 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Alex's Form</title>
   </head>
-  <body></body>
+  <body>
+    <div id="myForm">
+      <label for="inputName">Name: <input type="text" id="inputName"/></label>
+      <label for="inputSurname"
+        >Surname: <input type="text" id="inputSurname"
+      /></label>
+      <label for="inputEmail"
+        >Email: <input type="text" id="inputEmail"
+      /></label>
+      <label for="inputAddress"
+        >Address : <input type="text" id="inputAddress"
+      /></label>
+      <label for="countrySpain"
+        ><input type="radio" id="radioSpain" name="country" value="spanish" />
+        Spain</label
+      >
+      <label for="countryUSA"
+        ><input type="radio" id="radioUSA" name="country" value="american" />
+        USA</label
+      >
+      <label for="inputBirth"
+        >Birth: <input type="text" id="inputBirth"
+      /></label>
+      <label for="inputZipCode"
+        >ZIP Code: <input type="text" id="inputZipCode"
+      /></label>
+      <label for="inputPhone"
+        >Phone: <input type="text" id="inputPhone"
+      /></label>
+      <button id="buttonSend">Send</button>
+    </div>
+  </body>
   <script src="./constants/constants.js"></script>
   <script src="./services/formService.js"></script>
   <script src="./views/formView.js"></script>
