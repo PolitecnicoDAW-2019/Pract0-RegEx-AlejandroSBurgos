@@ -7,15 +7,15 @@ class FormView {
     element.style.borderColor = RESULT_COLOR.error;
   }
 
-  _isLenght(text) {
-    const textLenght = text.lenght;
-    return textLenght >= 3;
+  _isLength(text) {
+    const textLength = text.length;
+    return textLength >= 3;
   }
 
   getInputNameValue() {
     GUI.inputName.addEventListener('change', function() {
       const nameValue = GUI.inputName.value;
-      if (this._isLenght(nameValue)) return nameValue;
+      if (this._isLength(nameValue)) return nameValue;
     });
   }
 
@@ -28,7 +28,7 @@ class FormView {
   getInputSurnameValue() {
     GUI.inputSurname.addEventListener('change', function() {
       const surnameValue = GUI.inputSurname.value;
-      if (this._isLenght(surnameValue)) return surnameValue;
+      if (this._isLength(surnameValue)) return surnameValue;
     });
   }
 
@@ -41,7 +41,7 @@ class FormView {
   getInputEmailValue() {
     GUI.inputEmail.addEventListener('change', function() {
       const emailValue = GUI.inputEmail.value;
-      if (this._isLenght(emailValue)) return emailValue;
+      if (this._isLength(emailValue)) return emailValue;
     });
   }
 
@@ -54,7 +54,7 @@ class FormView {
   getInputBirthValue() {
     GUI.inputBirth.addEventListener('change', function() {
       const birthValue = GUI.inputBirth.value;
-      if (this._isLenght(birthValue)) return birthValue;
+      if (this._isLength(birthValue)) return birthValue;
     });
   }
 
@@ -67,7 +67,7 @@ class FormView {
   getInputZipCodeValue() {
     GUI.inputZipCode.addEventListener('change', function() {
       const zipCodeValue = GUI.inputZipCode.value;
-      if (this._isLenght(zipCodeValue)) return zipCodeValue;
+      if (this._isLength(zipCodeValue)) return zipCodeValue;
     });
   }
 
@@ -80,7 +80,7 @@ class FormView {
   getInputPhoneValue() {
     GUI.inputPhone.addEventListener('change', function() {
       const phoneValue = GUI.inputPhone.value;
-      if (this._isLenght(phoneValue)) return phoneValue;
+      if (this._isLength(phoneValue)) return phoneValue;
     });
   }
 
