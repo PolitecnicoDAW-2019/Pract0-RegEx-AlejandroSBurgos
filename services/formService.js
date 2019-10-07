@@ -11,10 +11,6 @@ class FormService {
     return Regex.email.test(email);
   }
 
-  isValidAddress(address) {
-    return Regex.address.test(address);
-  }
-
   _isDefaultCountry(country) {
     return country === DEFAULT_COUNTRY;
   }
@@ -26,9 +22,9 @@ class FormService {
     return Regex.american.birth.test(birth);
   }
   isValidBirth(birth, country) {
-    return this.isDefaultCountry(country)
-      ? this.isValidSpanishBirth(birth)
-      : this.isValidAmericanBirth(birth);
+    return this._isDefaultCountry(country)
+      ? this._isValidSpanishBirth(birth)
+      : this._isValidAmericanBirth(birth);
   }
 
   _isValidSpanishZipCode(zipCode) {
@@ -38,9 +34,9 @@ class FormService {
     return Regex.american.zipCode.test(zipCode);
   }
   isValidZipCode(zipCode, country) {
-    return this.isDefaultCountry(country)
-      ? this.isValidSpanishZipCode(zipCode)
-      : this.isValidAmericanZipCode(zipCode);
+    return this._isDefaultCountry(country)
+      ? this._isValidSpanishZipCode(zipCode)
+      : this._isValidAmericanZipCode(zipCode);
   }
 
   _isValidSpanishPhone(phone) {
@@ -50,9 +46,9 @@ class FormService {
     return Regex.american.phone.test(phone);
   }
   isValidPhone(phone, country) {
-    return this.isDefaultCountry(country)
-      ? this.isValidSpanishPhone(phone)
-      : this.isValidAmericanPhone(phone);
+    return this._isDefaultCountry(country)
+      ? this._isValidSpanishPhone(phone)
+      : this._isValidAmericanPhone(phone);
   }
 
   _isValidSpanishMobilePhone(mobilePhone) {
@@ -62,8 +58,8 @@ class FormService {
     return Regex.american.mobilePhone.test(mobilePhone);
   }
   isValidMobilePhone(mobilePhone, country) {
-    return this.isDefaultCountry(country)
-      ? this.isValidSpanishMobilePhone(mobilePhone)
-      : this.isValidAmericanMobilePhone(mobilePhone);
+    return this._isDefaultCountry(country)
+      ? this._isValidSpanishMobilePhone(mobilePhone)
+      : this._isValidAmericanMobilePhone(mobilePhone);
   }
 }
