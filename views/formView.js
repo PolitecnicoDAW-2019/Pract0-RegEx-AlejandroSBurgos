@@ -40,7 +40,7 @@ class FormView {
     GUI.inputSurname.addEventListener('keyup', () => {
       const surnameValue = GUI.inputSurname.value;
       if (this._isLength(surnameValue)) {
-        this._printFieldResult(isSurname, GUI.inputEmail);
+        this._printFieldResult(isSurname, GUI.inputSurname);
       }
     });
   }
