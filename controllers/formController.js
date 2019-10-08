@@ -5,52 +5,48 @@ class FormController {
   }
 
   validateAll() {
-    this.validateName();
-    this.validateSurname();
-    this.validateEmail();
-    const country = this.formView.getCurrentRadioCountryValue();
-    this.validateBirth(country);
-    this.validateZipCode(country);
-    this.validatePhone(country);
+    const country = this.formView.getCurrentRadioCountryValue() || 'american';
+    this.formView.changePlaceholders(country);
+    const inputsValue = this.formView.getInputsValue();
+    this.validateName(inputsValue.name);
+    this.validateSurname(inputsValue.surname);
+    this.validateEmail(inputsValue.email);
+    this.validateBirth(inputsValue.birth, country);
+    this.validateZipCode(inputsValue.zipCode, country);
+    this.validatePhone(inputsValue.phone, country);
   }
 
-  validateName() {
-    const name = this.formView.getInputNameValue();
+  validateName(name) {
     const isName = this.formService.isValidName(name);
-    this.formView.printNameValidation(isName);
+    this.formView.startInputNameEvent(isName);
   }
 
-  validateSurname() {
-    const surname = this.formView.getInputSurnameValue();
+  validateSurname(surname) {
     const isSurname = this.formService.isValidSurname(surname);
-    this.formView.printSurnameValidation(isSurname);
+    this.formView.startInputSurnameEvent(isSurname);
   }
 
-  validateEmail() {
-    const email = this.formView.getInputEmailValue();
+  validateEmail(email) {
     const isEmail = this.formService.isValidEmail(email);
-    this.formView.printEmailValidation(isEmail);
+    this.formView.startInputEmailEvent(isEmail);
   }
 
   getCountry() {
     return this.formView.getCurrentRadioCountryValue();
   }
 
-  validateBirth(country) {
-    const birth = this.formView.getInputBirthValue();
+  validateBirth(birth, country) {
     const isBirth = this.formService.isValidBirth(birth, country);
-    this.formView.printSurnameValidation(isBirth);
+    this.formView.startInputBirthEvent(isBirth);
   }
 
-  validateZipCode(country) {
-    const zipCode = this.formView.getInputZipCodeValue();
+  validateZipCode(zipCode, country) {
     const isZipCode = this.formService.isValidBirth(zipCode, country);
-    this.formView.printZipCodeValidation(isZipCode);
+    this.formView.startInputZipCodeEvent(isZipCode);
   }
 
-  validatePhone(country) {
-    const phone = this.formView.getInputPhoneValue();
+  validatePhone(phone, country) {
     const isPhone = this.formService.isValidPhone(phone, country);
-    this.formView.printPhoneValidation(isPhone);
+    this.formView.startInputPhoneEvent(isPhone);
   }
 }

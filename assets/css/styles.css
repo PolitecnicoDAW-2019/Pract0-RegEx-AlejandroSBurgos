@@ -1,0 +1,9 @@
+label {
+  display: block;
+  text-align: center;
+  padding-top: 1em;
+}
+
+label > input[type='radio'] {
+  display: inline-block;
+}

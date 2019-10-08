@@ -16,7 +16,7 @@ class FormService {
   }
 
   _isValidSpanishBirth(birth) {
-    return Regex.spanish.birth(birth);
+    return Regex.spanish.birth.test(birth);
   }
   _isValidAmericanBirth(birth) {
     return Regex.american.birth.test(birth);

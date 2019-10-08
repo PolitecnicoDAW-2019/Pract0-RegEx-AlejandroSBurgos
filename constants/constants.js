@@ -1,6 +1,6 @@
 const Regex = {
-  name: /^\p{L}{3,128}$/,
-  surname: /^[\p{L}\s]{3,128}$/,
+  name: /^[A-Za-záéíóú]{3,128}$/,
+  surname: /^[A-Za-záéíóú\s]{3,256}$/,
   email: /^[A-Za-z\_\.]{3,28}@[a-z]{2,25}\.[a-z]{2,25}$/,
   american: {
     birth: /^((0|1)\d{1})([-\/\s]{1})((0|1|2)\d{1})([-\/\s]{1})((19|20)\d{2})$/,
@@ -9,7 +9,7 @@ const Regex = {
   },
   spanish: {
     birth: /^((0|1|2)\d{1})([-\/\s]{1})((0|1)\d{1})([-\/\s]{1})((19|20)\d{2})$/,
-    zipCode: /^(?:0[1-9]\d{3}|[1-4]\d{4}|5[0-2]\d{3})$/,
+    zipCode: /^0[1-9][0-9]{3}|[1-4][0-9]{4}|5[0-2][0-9]{3}$/,
     phone: /^(\+34|0034|34)?[ -]*(9|8|6|7)[ -]*([0-9][ -]*){8}$/
   }
 };
@@ -36,3 +36,16 @@ const RESULT_COLOR = {
 };
 
 const DEFAULT_COUNTRY = 'spanish';
+
+const placeholders = {
+  spanish: {
+    birth: 'DD/MM/YYYY',
+    zipCode: '22222',
+    phone: '+34 666 555 444'
+  },
+  american: {
+    birth: 'MM/DD/YYYY',
+    zipCode: '55555-4444',
+    phone: '1 (333) 333 4444'
+  }
+};

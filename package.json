@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "run:jest": "jest --passWithNoTests ./services/*Spec.js"
+    "run:jest": "jest --passWithNoTests ./services/*Spec.js",
+    "run:karma": "karma start"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
     "karma-coverage-istanbul-reporter": "^2.1.0",
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2"
+  },
+  "dependencies": {
+    "npm": "^6.12.0"
   }
 }
